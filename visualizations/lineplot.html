@@ -6,15 +6,16 @@
     <title>Line Plot - MBTA Ridership Visualization</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Line plot visualization of MBTA ridership patterns by time of day and subway line">
 </head>
 <body>
     <header>
-        <h1>MBTA Visualization Project</h1>
+        <h1><i class="fas fa-subway"></i> MBTA Visualization Project</h1>
         <nav>
             <ul>
                 <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="lineplot.html" class="active"><i class="fas fa-chart-line"></i> Line Plot</a></li>
-                <li><a href="mbta_avg_flow.html"><i class="fas fa-map-marked-alt"></i> Interactive Heat Map</a></li>
+                <li><a href="mbta_avg_flow.html"><i class="fas fa-map-marked-alt"></i> Heat Map</a></li>
                 <li><a href="visualization3.html"><i class="fas fa-chart-bar"></i> Vis 3</a></li>
                 <li><a href="visualization4.html"><i class="fas fa-chart-pie"></i> Vis 4</a></li>
                 <li><a href="visualization5.html"><i class="fas fa-chart-area"></i> Vis 5</a></li>
@@ -33,9 +34,18 @@
 
     <main>
         <section>
-            <h2><i class="fas fa-chart-line"></i> Average Flow by Route and Time of Day</h2>
+            <div class="viz-heading">
+                <i class="fas fa-chart-line"></i>
+                <h2>Average Flow by Route and Time of Day</h2>
+            </div>
             
-            <img src="../lineplot.png" alt="Line Plot of MBTA Ridership" width="800">
+            <div class="viz-note">
+                <p><strong>Note:</strong> This visualization shows ridership patterns across all MBTA subway lines throughout different time periods of the day. Each line is color-coded to match the actual MBTA line colors.</p>
+            </div>
+            
+            <div class="visualization-container">
+                <img src="../lineplot.png" alt="Line Plot of MBTA Ridership" class="viz-image">
+            </div>
 
             <div class="transit-line">
                 <div class="red"></div>
@@ -44,61 +54,131 @@
                 <div class="blue"></div>
             </div>
             
-            <h3>About This Visualization</h3>
+            <h3><i class="fas fa-info-circle"></i> About This Visualization</h3>
             <p>
                 This line plot illustrates the <strong>average daily total flow</strong> for each MBTA subway line across different times of the day. 
                 Each line corresponds to an MBTA subway line, color-coded to match its official route color:
             </p>
             
-            <ul>
-                <li class="highlight-red">Red Line</li>
-                <li class="highlight-orange">Orange Line</li>
-                <li class="highlight-green">Green Line</li>
-                <li class="highlight-blue">Blue Line</li>
-            </ul>
+            <div class="lines-legend">
+                <div class="mbta-line red-line">
+                    <span class="line-indicator"></span>
+                    <span class="line-name">Red Line</span>
+                </div>
+                <div class="mbta-line orange-line">
+                    <span class="line-indicator"></span>
+                    <span class="line-name">Orange Line</span>
+                </div>
+                <div class="mbta-line green-line">
+                    <span class="line-indicator"></span>
+                    <span class="line-name">Green Line</span>
+                </div>
+                <div class="mbta-line blue-line">
+                    <span class="line-indicator"></span>
+                    <span class="line-name">Blue Line</span>
+                </div>
+            </div>
             
+            <h3><i class="fas fa-clock"></i> Time Periods</h3>
             <p>
-                The x-axis represents different time periods throughout the day, ordered as:
+                The x-axis represents different time periods throughout the day:
             </p>
-            <ul>
-                <li>VERY_EARLY_MORNING</li>
-                <li>EARLY_AM</li>
-                <li>AM_PEAK</li>
-                <li>MIDDAY_BASE</li>
-                <li>MIDDAY_SCHOOL</li>
-                <li>PM_PEAK</li>
-                <li>EVENING</li>
-                <li>LATE_EVENING</li>
-                <li>NIGHT</li>
-            </ul>
+            <div class="time-periods">
+                <div class="time-period">
+                    <span class="time-label">VERY_EARLY_MORNING</span>
+                    <span class="time-desc">Before early commuters</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">EARLY_AM</span>
+                    <span class="time-desc">Early morning hours</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">AM_PEAK</span>
+                    <span class="time-desc">Morning rush hour</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">MIDDAY_BASE</span>
+                    <span class="time-desc">Late morning hours</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">MIDDAY_SCHOOL</span>
+                    <span class="time-desc">School dismissal times</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">PM_PEAK</span>
+                    <span class="time-desc">Evening rush hour</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">EVENING</span>
+                    <span class="time-desc">Early evening hours</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">LATE_EVENING</span>
+                    <span class="time-desc">Late evening hours</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">NIGHT</span>
+                    <span class="time-desc">Night hours</span>
+                </div>
+            </div>
             
             <p>
                 The y-axis measures average flow, capturing total activity (boardings and alightings) at each station.
             </p>
 
-            <h3>Key Insights</h3>
-            <p>
-                The plot reveals distinct peaks during the <strong>AM_PEAK</strong> and <strong>PM_PEAK</strong> periods, aligning with the traditional rush hours for commuters traveling to and from 
-                work or school. Outside of these peak periods, ridership declines, with the lowest activity occurring during the very early morning and late-night 
-                hours.
-            </p>
-            
-            <p>
-                Notably, the <span class="highlight-red">Red</span> and <span class="highlight-orange">Orange Lines</span> consistently show the highest levels of ridership, indicating heavier transit demand in areas such as Cambridge, 
-                Somerville, Malden, Jamaica Plain, and the South Shore. The <span class="highlight-blue">Blue Line</span> follows, with lower ridership levels, which is expected given its shorter route 
-                length compared to the other three subway lines.
-            </p>
-            
-            <p>
-                Surprisingly, the <span class="highlight-green">Green Line</span> exhibits the lowest overall flow despite having the most stations and multiple branches. 
-                This suggests that ridership is more dispersed across Newton, Brookline, and Medford, rather than concentrated at a few high-traffic stations.
-            </p>
+            <h3><i class="fas fa-lightbulb"></i> Key Insights</h3>
+            <div class="insights-container">
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h4>Peak Hour Patterns</h4>
+                        <p>
+                            The plot reveals distinct peaks during the <strong>AM_PEAK</strong> and <strong>PM_PEAK</strong> periods, aligning with the traditional rush hours for commuters traveling to and from 
+                            work or school. Outside of these peak periods, ridership declines, with the lowest activity during early morning and late-night hours.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h4>Line Popularity</h4>
+                        <p>
+                            The <span class="highlight-red">Red</span> and <span class="highlight-orange">Orange Lines</span> consistently show the highest levels of ridership, indicating heavier transit demand in areas such as Cambridge, 
+                            Somerville, Malden, Jamaica Plain, and the South Shore. The <span class="highlight-blue">Blue Line</span> follows, with lower ridership levels, expected given its shorter route 
+                            length compared to the other lines.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-surprise"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h4>Surprising Finding</h4>
+                        <p>
+                            The <span class="highlight-green">Green Line</span> exhibits the lowest overall flow despite having the most stations and multiple branches. 
+                            This suggests that ridership is more dispersed across Newton, Brookline, and Medford, rather than concentrated at a few high-traffic stations.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-            <h3>Implications</h3>
+            <h3><i class="fas fa-bullseye"></i> Implications</h3>
             <p>
                 By highlighting these trends, this visualization provides valuable insights into how transit demand fluctuates throughout the day and across different 
                 regions, offering a clearer picture of where service improvements or adjustments may be needed.
             </p>
+            <ul>
+                <li>Transit authorities could adjust train frequencies during peak hours on the Red and Orange lines</li>
+                <li>Investigate why the Green Line sees lower ridership despite having the most stations</li>
+                <li>Consider optimizations for early morning and late evening service based on actual demand</li>
+            </ul>
             
             <div class="transit-line">
                 <div class="red"></div>
@@ -107,20 +187,67 @@
                 <div class="blue"></div>
             </div>
             
-            <p style="text-align: center; margin-top: 2rem;">
-                <a href="mbta_avg_flow.html" class="btn">
-                    <i class="fas fa-arrow-right"></i> Explore Heat Map
+            <div class="navigation-buttons">
+                <a href="../index.html" class="btn btn-alt">
+                    <i class="fas fa-arrow-left"></i> Back to Home
                 </a>
-            </p>
+                <a href="mbta_avg_flow.html" class="btn">
+                    <i class="fas fa-map-marked-alt"></i> Explore Heat Map
+                </a>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 MBTA Visualization Project | DS4200 Final Project</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MBTA Visualization Project</h3>
+                <p>A data visualization exploration of Boston's subway system ridership patterns and transit efficiency</p>
+            </div>
+            <div class="footer-section">
+                <h3>Project Links</h3>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                    <li><a href="lineplot.html"><i class="fas fa-angle-right"></i> Line Plot</a></li>
+                    <li><a href="mbta_avg_flow.html"><i class="fas fa-angle-right"></i> Heat Map</a></li>
+                    <li><a href="takeaways.html"><i class="fas fa-angle-right"></i> Takeaways</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Made With</h3>
+                <ul class="tech-list">
+                    <li><i class="fab fa-html5"></i> HTML5</li>
+                    <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                    <li><i class="fab fa-js"></i> D3.js</li>
+                    <li><i class="fas fa-database"></i> MBTA Data</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 MBTA Visualization Project | DS4200 Final Project</p>
+        </div>
     </footer>
     
     <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

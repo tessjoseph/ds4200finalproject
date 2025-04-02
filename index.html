@@ -6,15 +6,16 @@
     <title>DS4200 Final Project: Traffic trends of the "T"</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Exploring MBTA's ridership data to uncover trends, challenges, and opportunities in Boston's transit system">
 </head>
 <body>
     <header>
-        <h1>MBTA Visualization Project</h1>
+        <h1><i class="fas fa-subway"></i> MBTA Visualization Project</h1>
         <nav>
             <ul>
                 <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="visualizations/lineplot.html"><i class="fas fa-chart-line"></i> Line Plot</a></li>
-                <li><a href="visualizations/mbta_avg_flow.html"><i class="fas fa-map-marked-alt"></i> Interactive Heat Map</a></li>
+                <li><a href="visualizations/mbta_avg_flow.html"><i class="fas fa-map-marked-alt"></i> Heat Map</a></li>
                 <li><a href="visualizations/visualization3.html"><i class="fas fa-chart-bar"></i> Vis 3</a></li>
                 <li><a href="visualizations/visualization4.html"><i class="fas fa-chart-pie"></i> Vis 4</a></li>
                 <li><a href="visualizations/visualization5.html"><i class="fas fa-chart-area"></i> Vis 5</a></li>
@@ -27,19 +28,20 @@
     <div class="hero">
         <div class="hero-content">
             <h1>Mapping Boston's Transit Patterns</h1>
-            <p>Exploring MBTA's ridership data to uncover trends, challenges, and opportunities</p>
+            <p>Exploring MBTA's ridership data to uncover trends, challenges, and opportunities for a more efficient transit system</p>
             <a href="#about" class="btn btn-large">
                 <i class="fas fa-arrow-down"></i> Explore Our Analysis
             </a>
         </div>
+        <div class="hero-overlay"></div>
     </div>
 
     <!-- MBTA Line Colors Bar -->
     <div class="transit-line">
-        <div class="red"></div>
-        <div class="orange"></div>
-        <div class="green"></div>
-        <div class="blue"></div>
+        <div class="red" title="Red Line"></div>
+        <div class="orange" title="Orange Line"></div>
+        <div class="green" title="Green Line"></div>
+        <div class="blue" title="Blue Line"></div>
     </div>
 
     <main>
@@ -48,19 +50,19 @@
             <div class="feature-item">
                 <i class="fas fa-chart-line"></i>
                 <h3>Line Plot</h3>
-                <p>Time-of-day analysis of subway ridership patterns</p>
+                <p>Time-of-day analysis of subway ridership patterns across different MBTA lines</p>
                 <a href="visualizations/lineplot.html">View Analysis</a>
             </div>
             <div class="feature-item">
                 <i class="fas fa-map-marked-alt"></i>
                 <h3>Heat Map</h3>
-                <p>Geographical visualization of station activity</p>
+                <p>Interactive geographical visualization of station activity throughout Boston</p>
                 <a href="visualizations/mbta_avg_flow.html">View Map</a>
             </div>
             <div class="feature-item">
                 <i class="fas fa-lightbulb"></i>
                 <h3>Insights</h3>
-                <p>Key findings and recommendations</p>
+                <p>Key findings, recommendations and actionable insights from our data analysis</p>
                 <a href="visualizations/takeaways.html">View Takeaways</a>
             </div>
         </div>
@@ -104,11 +106,23 @@
             </div>
             
             <h2><i class="fas fa-database"></i> Data Source</h2>
-            <p>
-                To support this analysis, we're working with MBTA rail ridership data from MassDOT's public portal. The dataset covers three seasonal snapshots 
-                (2017, 2018, and 2019) and includes information such as station names, boarding and alighting counts, service days, and routes. 
-                In total, it contains over 7,900 entries across 17 attributes. 
-            </p>
+            <div class="data-source-container">
+                <div class="data-source-image">
+                    <img src="https://images.unsplash.com/photo-1568306068902-320ff93b842e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Data analysis visualization" class="rounded-image">
+                </div>
+                <div class="data-source-text">
+                    <p>
+                        To support this analysis, we're working with MBTA rail ridership data from MassDOT's public portal. The dataset covers three seasonal snapshots 
+                        (2017, 2018, and 2019) and includes information such as station names, boarding and alighting counts, service days, and routes. 
+                        In total, it contains over 7,900 entries across 17 attributes.
+                    </p>
+                    <div class="data-badges">
+                        <span class="badge"><i class="fas fa-calendar-alt"></i> 2017-2019</span>
+                        <span class="badge"><i class="fas fa-train"></i> 4 Rail Lines</span>
+                        <span class="badge"><i class="fas fa-database"></i> Public MassDOT Data</span>
+                    </div>
+                </div>
+            </div>
             
             <h2><i class="fas fa-question-circle"></i> Research Questions</h2>
             <div class="question-card">
@@ -130,26 +144,50 @@
                 <div class="impact-item">
                     <i class="fas fa-city"></i>
                     <h3>Urban Planning</h3>
-                    <p>Better integrate transit planning with neighborhood development</p>
+                    <p>Better integrate transit planning with neighborhood development and growth strategies</p>
                 </div>
                 <div class="impact-item">
                     <i class="fas fa-users"></i>
                     <h3>Community Benefits</h3>
-                    <p>Improve transit equity and accessibility for all residents</p>
+                    <p>Improve transit equity and accessibility for all residents across different communities</p>
                 </div>
                 <div class="impact-item">
                     <i class="fas fa-leaf"></i>
                     <h3>Sustainability</h3>
-                    <p>Efficient transit reduces traffic congestion and emissions</p>
+                    <p>Efficient transit reduces traffic congestion, emissions, and urban environmental impact</p>
                 </div>
             </div>
             
             <h2><i class="fas fa-project-diagram"></i> Project Scope</h2>
-            <p>
-                For this project, we've chosen to focus on MBTA heavy and light rail lines, leaving out commuter rail and bus networks to keep the scope manageable and the analysis consistent. 
-                By zeroing in on three years of subway data, we can capture year-to-year changes while maintaining clarity in our results. 
-                The final product includes a mix of static charts and interactive maps, allowing users to explore the data from both broad and detailed perspectives.
-            </p>
+            <div class="scope-container">
+                <div class="scope-text">
+                    <p>
+                        For this project, we've chosen to focus on MBTA heavy and light rail lines, leaving out commuter rail and bus networks to keep the scope manageable and the analysis consistent. 
+                        By zeroing in on three years of subway data, we can capture year-to-year changes while maintaining clarity in our results. 
+                    </p>
+                    <p>
+                        The final product includes a mix of static charts and interactive maps, allowing users to explore the data from both broad and detailed perspectives.
+                    </p>
+                </div>
+                <div class="mbta-lines">
+                    <div class="mbta-line red-line">
+                        <span class="line-indicator"></span>
+                        <span class="line-name">Red Line</span>
+                    </div>
+                    <div class="mbta-line orange-line">
+                        <span class="line-indicator"></span>
+                        <span class="line-name">Orange Line</span>
+                    </div>
+                    <div class="mbta-line green-line">
+                        <span class="line-indicator"></span>
+                        <span class="line-name">Green Line</span>
+                    </div>
+                    <div class="mbta-line blue-line">
+                        <span class="line-indicator"></span>
+                        <span class="line-name">Blue Line</span>
+                    </div>
+                </div>
+            </div>
             
             <div class="transit-line">
                 <div class="red"></div>
@@ -161,12 +199,14 @@
             <div class="cta-section">
                 <h2>Ready to explore the data?</h2>
                 <p>Discover patterns and insights from our visualizations</p>
-                <a href="visualizations/lineplot.html" class="btn">
-                    <i class="fas fa-arrow-right"></i> Start with Line Plot
-                </a>
-                <a href="visualizations/mbta_avg_flow.html" class="btn btn-alt">
-                    <i class="fas fa-map-marked-alt"></i> View Heat Map
-                </a>
+                <div class="cta-buttons">
+                    <a href="visualizations/lineplot.html" class="btn">
+                        <i class="fas fa-chart-line"></i> Start with Line Plot
+                    </a>
+                    <a href="visualizations/mbta_avg_flow.html" class="btn btn-alt">
+                        <i class="fas fa-map-marked-alt"></i> View Heat Map
+                    </a>
+                </div>
             </div>
         </section>
     </main>
@@ -175,23 +215,29 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>MBTA Visualization Project</h3>
-                <p>A data visualization exploration of Boston's subway system</p>
+                <p>A data visualization exploration of Boston's subway system ridership patterns and transit efficiency</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
             <div class="footer-section">
                 <h3>Project Links</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="visualizations/lineplot.html">Line Plot</a></li>
-                    <li><a href="visualizations/mbta_avg_flow.html">Heat Map</a></li>
-                    <li><a href="visualizations/takeaways.html">Takeaways</a></li>
+                    <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                    <li><a href="visualizations/lineplot.html"><i class="fas fa-angle-right"></i> Line Plot</a></li>
+                    <li><a href="visualizations/mbta_avg_flow.html"><i class="fas fa-angle-right"></i> Heat Map</a></li>
+                    <li><a href="visualizations/takeaways.html"><i class="fas fa-angle-right"></i> Takeaways</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Made With</h3>
-                <ul>
-                    <li>HTML/CSS</li>
-                    <li>D3.js</li>
-                    <li>MBTA Data</li>
+                <ul class="tech-list">
+                    <li><i class="fab fa-html5"></i> HTML5</li>
+                    <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                    <li><i class="fab fa-js"></i> D3.js</li>
+                    <li><i class="fas fa-database"></i> MBTA Data</li>
                 </ul>
             </div>
         </div>
@@ -203,6 +249,24 @@
     <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
 
