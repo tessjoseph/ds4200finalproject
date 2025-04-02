@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization 1 - MBTA Ridership</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to external CSS for styling -->
+</head>
+<body>
+    <header>
+        <h1>Static Line Plot: Average Flow by Route and Time of Day</h1>
+    </header>
+
+    <main>
+        <section>
+            <img src="lineplot.png" alt="Line Plot of MBTA Ridership" width="800">
+            <p>
+                Our first visualization is a line plot that illustrates the average daily total flow for each MBTA subway line across different times of the day. 
+                Essentially, this plot helps us determine which lines experience the highest ridership and when peak usage occurs. Each line in the graph 
+                corresponds to an MBTA subway line, color-coded to match its official route color (Red for the Red Line, Blue for the Blue Line, etc.). 
+                The x-axis represents different time periods throughout the day, ordered as VERY_EARLY_MORNING, EARLY_AM, AM_PEAK, MIDDAY_BASE, MIDDAY_SCHOOL, 
+                PM_PEAK, EVENING, LATE_EVENING, and NIGHT. The y-axis measures average flow, capturing total activity (boardings and alightings) at each station.
+            </p>
+
+            <p>
+                The plot reveals distinct peaks during the AM_PEAK and PM_PEAK periods, aligning with the traditional rush hours for commuters traveling to and from 
+                work or school. Outside of these peak periods, ridership declines, with the lowest activity occurring during the very early morning and late-night 
+                hours. Notably, the Red and Orange Lines consistently show the highest levels of ridership, indicating heavier transit demand in areas such as Cambridge, 
+                Somerville, Malden, Jamaica Plain, and the South Shore. The Blue Line follows, with lower ridership levels, which is expected given its shorter route 
+                length compared to the other three subway lines. Surprisingly, the Green Line exhibits the lowest overall flow despite having the most stations and multiple branches. 
+                This suggests that ridership is more dispersed across Newton, Brookline, and Medford, rather than concentrated at a few high-traffic stations.
+            </p>
+
+            <p>
+                By highlighting these trends, this visualization provides valuable insights into how transit demand fluctuates throughout the day and across different 
+                regions, offering a clearer picture of where service improvements or adjustments may be needed.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 MBTA Ridership Analysis Project</p>
+    </footer>
+</body>
+</html>
