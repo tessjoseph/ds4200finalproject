@@ -4,103 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Key Takeaways - MBTA Ridership Analysis</title>
-    <link rel="stylesheet" href="styles.css">  <!-- External CSS -->
-    <style>
-        /* Main content styling */
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #003366;
-        }
-
-        .takeaway {
-            background-color: #f4f4f4;
-            padding: 15px;
-            border-left: 5px solid #003366;
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Key findings and takeaways from the MBTA ridership data analysis">
 </head>
 <body>
-
-    <!-- Top Banner -->
     <header>
-        MBTA Ridership Analysis Project
+        <h1><i class="fas fa-subway"></i> MBTA Visualization Project</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="lineplot.html"><i class="fas fa-chart-line"></i> Line Plot</a></li>
+                <li><a href="mbta_avg_flow.html"><i class="fas fa-map-marked-alt"></i> Heat Map</a></li>
+                <li><a href="takeaways.html" class="active"><i class="fas fa-lightbulb"></i> Takeaways</a></li>
+            </ul>
+        </nav>
     </header>
+    
+    <!-- MBTA Line Colors Bar -->
+    <div class="transit-line">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </div>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="visualizations/lineplot.html">Line Plot</a></li>
-            <li><a href="visualizations/mbta_avg_flow.html">Interactive Heat Map</a></li>
-            <li><a href="visualizations/visualization3.html">Vis 3</a></li>
-            <li><a href="visualizations/visualization4.html">Vis 4</a></li>
-            <li><a href="visualizations/visualization5.html">Vis 5</a></li>
-            <li><a href="takeaways.html">Takeaways</a></li>
-        </ul>
-    </nav>
-
-    <!-- Main Content -->
     <main>
-        <h2>Key Takeaways from MBTA Ridership Analysis</h2>
+        <section>
+            <div class="viz-heading">
+                <i class="fas fa-lightbulb"></i>
+                <h2>Key Takeaways from MBTA Ridership Analysis</h2>
+            </div>
+            
+            <div class="viz-note">
+                <p><strong>Note:</strong> These insights represent the most significant findings from our analysis of MBTA ridership data across multiple visualizations.</p>
+            </div>
 
-        <div class="takeaway">
-            <h3>1. MBTA Ridership is Highly Dependent on Work and School Commutes</h3>
-            <p>
-                The **line plot** and **heatmap** both reveal that **ridership is concentrated around morning (AM_PEAK) and evening (PM_PEAK) hours**.  
-                This pattern strongly suggests that the MBTA primarily serves **commuters traveling to work and school**, with significantly **lower ridership on weekends**.  
-            </p>
-            <p>
-                <strong>Recommendation:</strong>  
-                To improve service, MBTA could explore **reallocating resources** by increasing train frequency during peak hours and reducing underused services during midday and weekends.  
-            </p>
-        </div>
+            <div class="insights-container">
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h4>1. MBTA Ridership is Highly Dependent on Work and School Commutes</h4>
+                        <p>
+                            The <strong>line plot</strong> and <strong>heatmap</strong> both reveal that <strong>ridership is concentrated around morning (AM_PEAK) and evening (PM_PEAK) hours</strong>.
+                            This pattern strongly suggests that the MBTA primarily serves <strong>commuters traveling to work and school</strong>, with significantly <strong>lower ridership on weekends</strong>.
+                        </p>
+                        <p>
+                            <strong>Recommendation:</strong> 
+                            To improve service, MBTA could explore <strong>reallocating resources</strong> by increasing train frequency during peak hours and reducing underused services during midday and weekends.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h4>2. Major Transfer Stations Experience Consistently High Traffic</h4>
+                        <p>
+                            The <strong>interactive heatmap</strong> shows that stations like <strong>Downtown Crossing, Park Street, and North Station</strong> have <strong>continuously high passenger flow</strong> across all time periods.
+                            These stations act as crucial <strong>transfer points</strong>, meaning that congestion at these locations could impact the overall efficiency of the transit system.
+                        </p>
+                        <p>
+                            <strong>Recommendation:</strong> 
+                            To reduce congestion, MBTA could consider <strong>infrastructure improvements</strong> such as expanded platforms, better crowd flow management, or express trains that bypass high-traffic areas.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h4>3. The Green Line Operates Differently from Other Subway Lines</h4>
+                        <p>
+                            Unlike other MBTA subway lines, the <strong>Green Line branches</strong> have <strong>more evenly distributed ridership</strong> outside the downtown core.
+                            This pattern suggests that the Green Line <strong>primarily serves residential and suburban areas</strong>, rather than high-density business districts.
+                        </p>
+                        <p>
+                            <strong>Recommendation:</strong> 
+                            MBTA planners could explore <strong>increasing service frequency on Green Line branches</strong> during non-peak hours to support more flexible commuting and local travel.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-        <div class="takeaway">
-            <h3>2. Major Transfer Stations Experience Consistently High Traffic</h3>
+            <div class="viz-heading">
+                <i class="fas fa-bullseye"></i>
+                <h3>Conclusion</h3>
+            </div>
             <p>
-                The **interactive heatmap** shows that stations like **Downtown Crossing, Park Street, and North Station** have **continuously high passenger flow** across all time periods.  
-                These stations act as crucial **transfer points**, meaning that congestion at these locations could impact the overall efficiency of the transit system.  
+                The findings from this project highlight <strong>critical ridership trends</strong> that can inform <strong>service optimizations</strong>.
+                By focusing on <strong>peak-hour efficiency, infrastructure improvements, and Green Line accessibility</strong>, MBTA can enhance overall <strong>commuter experience and system efficiency</strong>.
             </p>
-            <p>
-                <strong>Recommendation:</strong>  
-                To reduce congestion, MBTA could consider **infrastructure improvements** such as expanded platforms, better crowd flow management, or express trains that bypass high-traffic areas.  
-            </p>
-        </div>
-
-        <div class="takeaway">
-            <h3>3. The Green Line Operates Differently from Other Subway Lines</h3>
-            <p>
-                Unlike other MBTA subway lines, the **Green Line branches** have **more evenly distributed ridership** outside the downtown core.  
-                This pattern suggests that the Green Line **primarily serves residential and suburban areas**, rather than high-density business districts.  
-            </p>
-            <p>
-                <strong>Recommendation:</strong>  
-                MBTA planners could explore **increasing service frequency on Green Line branches** during non-peak hours to support more flexible commuting and local travel.  
-            </p>
-        </div>
-
-        <div class="takeaway">
-            <h3>Conclusion</h3>
-            <p>
-                The findings from this project highlight **critical ridership trends** that can inform **service optimizations**.  
-                By focusing on **peak-hour efficiency, infrastructure improvements, and Green Line accessibility**, MBTA can enhance overall **commuter experience and system efficiency**.  
-            </p>
-        </div>
-
+            
+            <div class="transit-line">
+                <div class="red"></div>
+                <div class="orange"></div>
+                <div class="green"></div>
+                <div class="blue"></div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <a href="mbta_avg_flow.html" class="btn btn-alt">
+                    <i class="fas fa-map-marked-alt"></i> View Heat Map
+                </a>
+                <a href="../index.html" class="btn">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+            </div>
+        </section>
     </main>
-
-    <!-- Bottom Banner -->
+    
     <footer>
-        © 2025 MBTA Ridership Analysis Project
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MBTA Visualization Project</h3>
+                <p>A data visualization exploration of Boston's subway system ridership patterns and transit efficiency</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Project Links</h3>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                    <li><a href="lineplot.html"><i class="fas fa-angle-right"></i> Line Plot</a></li>
+                    <li><a href="mbta_avg_flow.html"><i class="fas fa-angle-right"></i> Heat Map</a></li>
+                    <li><a href="takeaways.html"><i class="fas fa-angle-right"></i> Takeaways</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Made With</h3>
+                <ul class="tech-list">
+                    <li><i class="fab fa-html5"></i> HTML5</li>
+                    <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                    <li><i class="fab fa-js"></i> D3.js</li>
+                    <li><i class="fas fa-database"></i> MBTA Data</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 MBTA Visualization Project | DS4200 Final Project</p>
+        </div>
     </footer>
+    
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('show');
+                    } else {
+                        backToTopButton.classList.remove('show');
+                    }
+                });
+                
+                backToTopButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

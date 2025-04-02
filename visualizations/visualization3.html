@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Station Comparison - MBTA Ridership Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Interactive comparison of MBTA station ridership patterns">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-subway"></i> MBTA Visualization Project</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="lineplot.html"><i class="fas fa-chart-line"></i> Line Plot</a></li>
+                <li><a href="mbta_avg_flow.html"><i class="fas fa-map-marked-alt"></i> Heat Map</a></li>
+                <li><a href="visualization3.html" class="active"><i class="fas fa-chart-bar"></i> Station Comparison</a></li>
+                <li><a href="visualization4.html"><i class="fas fa-chart-pie"></i> Yearly Trends</a></li>
+                <li><a href="visualization5.html"><i class="fas fa-chart-area"></i> Weekend Analysis</a></li>
+                <li><a href="takeaways.html"><i class="fas fa-lightbulb"></i> Takeaways</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- MBTA Line Colors Bar -->
+    <div class="transit-line">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </div>
 
+    <main>
+        <section>
+            <div class="viz-heading">
+                <i class="fas fa-chart-bar"></i>
+                <h2>Station Comparison</h2>
+            </div>
+            
+            <div class="viz-note">
+                <p><strong>Coming Soon:</strong> This visualization will compare ridership patterns between different MBTA stations, allowing for direct comparison of usage patterns.</p>
+            </div>
+            
+            <div class="visualization-container">
+                <div class="placeholder-viz">
+                    <i class="fas fa-clock"></i>
+                    <h3>Visualization Under Development</h3>
+                    <p>Our team is currently working on creating an interactive station comparison tool that will allow you to:</p>
+                    <ul>
+                        <li>Compare ridership between any stations</li>
+                        <li>Analyze differences in peak usage times</li>
+                        <li>Explore demographic connections to ridership patterns</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="transit-line">
+                <div class="red"></div>
+                <div class="orange"></div>
+                <div class="green"></div>
+                <div class="blue"></div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <a href="mbta_avg_flow.html" class="btn btn-alt">
+                    <i class="fas fa-map-marked-alt"></i> View Heat Map
+                </a>
+                <a href="visualization4.html" class="btn">
+                    <i class="fas fa-chart-pie"></i> Explore Yearly Trends
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MBTA Visualization Project</h3>
+                <p>A data visualization exploration of Boston's subway system ridership patterns and transit efficiency</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Project Links</h3>
+                <ul>
+                    <li><a href="../index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                    <li><a href="lineplot.html"><i class="fas fa-angle-right"></i> Line Plot</a></li>
+                    <li><a href="mbta_avg_flow.html"><i class="fas fa-angle-right"></i> Heat Map</a></li>
+                    <li><a href="takeaways.html"><i class="fas fa-angle-right"></i> Takeaways</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Made With</h3>
+                <ul class="tech-list">
+                    <li><i class="fab fa-html5"></i> HTML5</li>
+                    <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                    <li><i class="fab fa-js"></i> D3.js</li>
+                    <li><i class="fas fa-database"></i> MBTA Data</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 MBTA Visualization Project | DS4200 Final Project</p>
+        </div>
+    </footer>
+    
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            if (backToTopButton) {
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('show');
+                    } else {
+                        backToTopButton.classList.remove('show');
+                    }
+                });
+                
+                backToTopButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
