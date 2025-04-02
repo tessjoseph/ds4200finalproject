@@ -1,60 +1,126 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualization 1 - MBTA Ridership</title>
-    <link rel="stylesheet" href="styles.css">  <!-- Link to external CSS for styling -->
-
+    <title>Line Plot - MBTA Ridership Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>MBTA Visualization Project</h1>
         <nav>
             <ul>
-                <li><a href="https://tessjoseph.github.io/ds4200finalproject/index.html">Home</a></li>
-                <li><a href="lineplot.html">Line Plot</a></li>
-                <li><a href="mbta_avg_flow.html"> Interactive Heat Map</a></li>
-                <li><a href="visualizations/visualization3.html">Vis 3</a></li>
-                <li><a href="visualizations/visualization4.html">Vis 4</a></li>
-                <li><a href="visualizations/visualization5.html">Vis 5</a></li>
-
+                <li><a href="../index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="lineplot.html" class="active"><i class="fas fa-chart-line"></i> Line Plot</a></li>
+                <li><a href="mbta_avg_flow.html"><i class="fas fa-map-marked-alt"></i> Interactive Heat Map</a></li>
+                <li><a href="visualization3.html"><i class="fas fa-chart-bar"></i> Vis 3</a></li>
+                <li><a href="visualization4.html"><i class="fas fa-chart-pie"></i> Vis 4</a></li>
+                <li><a href="visualization5.html"><i class="fas fa-chart-area"></i> Vis 5</a></li>
+                <li><a href="takeaways.html"><i class="fas fa-lightbulb"></i> Takeaways</a></li>
             </ul>
         </nav>
     </header>
+    
+    <!-- MBTA Line Colors Bar -->
+    <div class="transit-line">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </div>
 
     <main>
         <section>
-            <h2>Static Line Plot: Average Flow by Route and Time of Day</h2>
-            <img src="lineplot.png" alt="Line Plot of MBTA Ridership" width="800">
+            <h2><i class="fas fa-chart-line"></i> Average Flow by Route and Time of Day</h2>
+            
+            <img src="../lineplot.png" alt="Line Plot of MBTA Ridership" width="800">
 
+            <div class="transit-line">
+                <div class="red"></div>
+                <div class="orange"></div>
+                <div class="green"></div>
+                <div class="blue"></div>
+            </div>
+            
+            <h3>About This Visualization</h3>
             <p>
-                Our first visualization is a line plot that illustrates the average daily total flow for each MBTA subway line across different times of the day. 
-                Essentially, this plot helps us determine which lines experience the highest ridership and when peak usage occurs. Each line in the graph 
-                corresponds to an MBTA subway line, color-coded to match its official route color (Red for the Red Line, Blue for the Blue Line, etc.). 
-                The x-axis represents different time periods throughout the day, ordered as VERY_EARLY_MORNING, EARLY_AM, AM_PEAK, MIDDAY_BASE, MIDDAY_SCHOOL, 
-                PM_PEAK, EVENING, LATE_EVENING, and NIGHT. The y-axis measures average flow, capturing total activity (boardings and alightings) at each station.
+                This line plot illustrates the <strong>average daily total flow</strong> for each MBTA subway line across different times of the day. 
+                Each line corresponds to an MBTA subway line, color-coded to match its official route color:
+            </p>
+            
+            <ul>
+                <li class="highlight-red">Red Line</li>
+                <li class="highlight-orange">Orange Line</li>
+                <li class="highlight-green">Green Line</li>
+                <li class="highlight-blue">Blue Line</li>
+            </ul>
+            
+            <p>
+                The x-axis represents different time periods throughout the day, ordered as:
+            </p>
+            <ul>
+                <li>VERY_EARLY_MORNING</li>
+                <li>EARLY_AM</li>
+                <li>AM_PEAK</li>
+                <li>MIDDAY_BASE</li>
+                <li>MIDDAY_SCHOOL</li>
+                <li>PM_PEAK</li>
+                <li>EVENING</li>
+                <li>LATE_EVENING</li>
+                <li>NIGHT</li>
+            </ul>
+            
+            <p>
+                The y-axis measures average flow, capturing total activity (boardings and alightings) at each station.
             </p>
 
+            <h3>Key Insights</h3>
             <p>
-                The plot reveals distinct peaks during the AM_PEAK and PM_PEAK periods, aligning with the traditional rush hours for commuters traveling to and from 
+                The plot reveals distinct peaks during the <strong>AM_PEAK</strong> and <strong>PM_PEAK</strong> periods, aligning with the traditional rush hours for commuters traveling to and from 
                 work or school. Outside of these peak periods, ridership declines, with the lowest activity occurring during the very early morning and late-night 
-                hours. Notably, the Red and Orange Lines consistently show the highest levels of ridership, indicating heavier transit demand in areas such as Cambridge, 
-                Somerville, Malden, Jamaica Plain, and the South Shore. The Blue Line follows, with lower ridership levels, which is expected given its shorter route 
-                length compared to the other three subway lines. Surprisingly, the Green Line exhibits the lowest overall flow despite having the most stations and multiple branches. 
+                hours.
+            </p>
+            
+            <p>
+                Notably, the <span class="highlight-red">Red</span> and <span class="highlight-orange">Orange Lines</span> consistently show the highest levels of ridership, indicating heavier transit demand in areas such as Cambridge, 
+                Somerville, Malden, Jamaica Plain, and the South Shore. The <span class="highlight-blue">Blue Line</span> follows, with lower ridership levels, which is expected given its shorter route 
+                length compared to the other three subway lines.
+            </p>
+            
+            <p>
+                Surprisingly, the <span class="highlight-green">Green Line</span> exhibits the lowest overall flow despite having the most stations and multiple branches. 
                 This suggests that ridership is more dispersed across Newton, Brookline, and Medford, rather than concentrated at a few high-traffic stations.
             </p>
 
+            <h3>Implications</h3>
             <p>
                 By highlighting these trends, this visualization provides valuable insights into how transit demand fluctuates throughout the day and across different 
                 regions, offering a clearer picture of where service improvements or adjustments may be needed.
+            </p>
+            
+            <div class="transit-line">
+                <div class="red"></div>
+                <div class="orange"></div>
+                <div class="green"></div>
+                <div class="blue"></div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem;">
+                <a href="mbta_avg_flow.html" class="btn">
+                    <i class="fas fa-arrow-right"></i> Explore Heat Map
+                </a>
             </p>
         </section>
     </main>
 
     <footer>
-        <p>© 2025 MBTA Ridership Analysis Project</p>
+        <p>&copy; 2023 MBTA Visualization Project | DS4200 Final Project</p>
     </footer>
+    
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 </body>
 </html>

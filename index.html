@@ -4,60 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DS4200 Final Project: Traffic trends of the "T"</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>MBTA Visualization Project</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="visualizations/lineplot.html">Line Plot</a></li>
-                <li><a href="visualizations/mbta_avg_flow.html"> Interactive Heat Map</a></li>
-                <li><a href="visualizations/visualization3.html">Vis 3</a></li>
-                <li><a href="visualizations/visualization4.html">Vis 4</a></li>
-                <li><a href="visualizations/visualization5.html">Vis 5</a></li>
-                <li><a href="visualizations/takeaways.html">Takeaways</a></li>
-
-
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="visualizations/lineplot.html"><i class="fas fa-chart-line"></i> Line Plot</a></li>
+                <li><a href="visualizations/mbta_avg_flow.html"><i class="fas fa-map-marked-alt"></i> Interactive Heat Map</a></li>
+                <li><a href="visualizations/visualization3.html"><i class="fas fa-chart-bar"></i> Vis 3</a></li>
+                <li><a href="visualizations/visualization4.html"><i class="fas fa-chart-pie"></i> Vis 4</a></li>
+                <li><a href="visualizations/visualization5.html"><i class="fas fa-chart-area"></i> Vis 5</a></li>
+                <li><a href="visualizations/takeaways.html"><i class="fas fa-lightbulb"></i> Takeaways</a></li>
             </ul>
         </nav>
     </header>
+    
+    <!-- MBTA Line Colors Bar -->
+    <div class="transit-line">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </div>
+
     <main>
         <section>
-            <h2>About the Project</h2>
+            <h2><i class="fas fa-subway"></i> About the Project</h2>
             <p>
-                For our project, we looked at the MBTA - or Massachusetts bay transportation authority’s dataset for Rail or “T” Ridership by Time Period, 
-                Line, and Station. As boston-based students who frequently use the “T”, we really wanted to gain a better understanding of the T’s traffic
-                patterns.
-
-                We aim to uncover trends in station usage and identify possible mismatches between transit demand and service availability. 
-                And by doing so, we hope to highlight where improvements could be made to better serve the diverse communities that rely on public
-                transit in the city.
+                For our project, we examined the MBTA (Massachusetts Bay Transportation Authority) dataset for Rail or "T" Ridership by Time Period, 
+                Line, and Station. As Boston-based students who frequently use the "T", we wanted to gain a better understanding of the transit system's traffic
+                patterns across different times and locations.
             </p>
             <p>
-                To support this analysis, we’re working with MBTA rail ridership data from MassDOT’s public portal. The dataset covers three seasonal snapshots 
+                We aim to uncover trends in station usage and identify possible mismatches between transit demand and service availability. 
+                By doing so, we hope to highlight where improvements could be made to better serve the diverse communities that rely on public
+                transit in the city.
+            </p>
+            
+            <div class="transit-line">
+                <div class="red"></div>
+                <div class="orange"></div>
+                <div class="green"></div>
+                <div class="blue"></div>
+            </div>
+            
+            <h2><i class="fas fa-database"></i> Data Source</h2>
+            <p>
+                To support this analysis, we're working with MBTA rail ridership data from MassDOT's public portal. The dataset covers three seasonal snapshots 
                 (2017, 2018, and 2019) and includes information such as station names, boarding and alighting counts, service days, and routes. 
                 In total, it contains over 7,900 entries across 17 attributes. 
             </p>
+            
+            <h2><i class="fas fa-question-circle"></i> Research Questions</h2>
             <p>
-                Our core research question asks: how do geographic and temporal factors shape ridership patterns on the MBTA? 
-                More specifically, are some stations overburdened while others are underutilized? 
-                And do current service levels meet the actual needs of the communities they’re intended to serve? How can we make the "T" more efficient
-                for its users?
+                Our core research question asks: <strong>How do geographic and temporal factors shape ridership patterns on the MBTA?</strong>
+            </p>
+            <p>More specifically:
+                <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+                    <li>Are some stations overburdened while others are underutilized?</li>
+                    <li>Do current service levels meet the actual needs of the communities they're intended to serve?</li>
+                    <li>How can we make the "T" more efficient for its users?</li>
+                </ul>
             </p>
 
+            <h2><i class="fas fa-bullseye"></i> Impact & Applications</h2>
             <p>
-                The potential impact of our work extends to planners, policymakers, and even community members. By making ridership patterns more visible,
+                The potential impact of our work extends to planners, policymakers, and community members. By making ridership patterns more visible,
                 this project can help identify gaps in service and suggest where resources might be more effectively allocated. 
             </p>
+            
+            <h2><i class="fas fa-project-diagram"></i> Project Scope</h2>
             <p>
-                For this project, we’ve chosen to focus on MBTA heavy and light rail lines, leaving out commuter rail and bus networks to keep the scope manageable and the analysis consistent. 
-                By zeroing in on three years of subway data, we can capture  and year-to-year changes while maintaining clarity in our results. 
-                The final product will include a mix of static charts and interactive maps, allowing users to explore the data from both broad and detailed perspectives.
+                For this project, we've chosen to focus on MBTA heavy and light rail lines, leaving out commuter rail and bus networks to keep the scope manageable and the analysis consistent. 
+                By zeroing in on three years of subway data, we can capture year-to-year changes while maintaining clarity in our results. 
+                The final product includes a mix of static charts and interactive maps, allowing users to explore the data from both broad and detailed perspectives.
+            </p>
+            
+            <div class="transit-line">
+                <div class="red"></div>
+                <div class="orange"></div>
+                <div class="green"></div>
+                <div class="blue"></div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem;">
+                <a href="visualizations/lineplot.html" class="btn">
+                    <i class="fas fa-arrow-right"></i> Explore Visualizations
+                </a>
             </p>
         </section>
     </main>
+    
+    <footer>
+        <p>&copy; 2023 MBTA Visualization Project | DS4200 Final Project</p>
+    </footer>
 </body>
 </html>
 
