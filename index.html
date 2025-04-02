@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DS4200 Final Project: Traffic trends of the "T"</title>
+    <title>MBTA Ridership Visualization - Transit Pattern Analysis</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta name="description" content="Exploring MBTA's ridership data to uncover trends, challenges, and opportunities in Boston's transit system">
@@ -45,6 +45,7 @@
     </div>
 
     <main>
+        <h2 class="section-title"><i class="fas fa-chart-network"></i>Interactive Visualizations</h2>
         <!-- Feature Grid -->
         <div class="feature-grid">
             <div class="feature-item">
@@ -206,27 +207,20 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="transit-line">
-                <div class="red"></div>
-                <div class="orange"></div>
-                <div class="green"></div>
-                <div class="blue"></div>
-            </div>
-            
-            <div class="cta-section">
-                <h2>Ready to explore the data?</h2>
-                <p>Discover patterns and insights from our visualizations</p>
-                <div class="cta-buttons">
-                    <a href="visualizations/lineplot.html" class="btn">
-                        <i class="fas fa-chart-line"></i> Start with Line Plot
-                    </a>
-                    <a href="visualizations/mbta_avg_flow.html" class="btn btn-alt">
-                        <i class="fas fa-map-marked-alt"></i> View Heat Map
-                    </a>
-                </div>
-            </div>
         </section>
+            
+        <div class="cta-section">
+            <h2>Ready to explore the data?</h2>
+            <p>Discover patterns and insights from our visualizations</p>
+            <div class="cta-buttons">
+                <a href="visualizations/lineplot.html" class="btn">
+                    <i class="fas fa-chart-line"></i> Start with Line Plot
+                </a>
+                <a href="visualizations/mbta_avg_flow.html" class="btn btn-alt">
+                    <i class="fas fa-map-marked-alt"></i> View Heat Map
+                </a>
+            </div>
+        </div>
     </main>
     
     <footer>
@@ -246,9 +240,9 @@
                     <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
                     <li><a href="visualizations/lineplot.html"><i class="fas fa-angle-right"></i> Line Plot</a></li>
                     <li><a href="visualizations/mbta_avg_flow.html"><i class="fas fa-angle-right"></i> Heat Map</a></li>
-                    <li><a href="visualizations/visualization3.html"><i class="fas fa-angle-right"></i> Station Comparison</a></li>
-                    <li><a href="visualizations/visualization4.html"><i class="fas fa-angle-right"></i> Yearly Trends</a></li>
-                    <li><a href="visualizations/visualization5.html"><i class="fas fa-angle-right"></i> Weekend Analysis</a></li>
+                    <li><a href="visualizations/visualization3.html"><i class="fas fa-angle-right"></i> Vis 3</a></li>
+                    <li><a href="visualizations/visualization4.html"><i class="fas fa-angle-right"></i> Vis 4</a></li>
+                    <li><a href="visualizations/visualization5.html"><i class="fas fa-angle-right"></i> Vis 5</a></li>
                     <li><a href="visualizations/takeaways.html"><i class="fas fa-angle-right"></i> Takeaways</a></li>
                 </ul>
             </div>
@@ -286,6 +280,25 @@
         backToTopButton.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Animate items on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateOnScroll = function() {
+                const items = document.querySelectorAll('.feature-item, .stat-card, .impact-item');
+                
+                items.forEach(item => {
+                    const itemPosition = item.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (itemPosition < screenPosition) {
+                        item.classList.add('animate');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
         });
     </script>
 </body>
