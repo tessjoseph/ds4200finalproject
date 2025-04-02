@@ -522,26 +522,6 @@ footer {
   color: var(--accent);
 }
 
-/* Script support for back to top button */
-document.addEventListener('DOMContentLoaded', function() {
-  const backToTopButton = document.querySelector('.back-to-top');
-  
-  if (backToTopButton) {
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-    
-    backToTopButton.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-});
-
 /* Additional styles for visualization elements */
 
 /* Lines legend */
@@ -798,4 +778,11 @@ document.addEventListener('DOMContentLoaded', function() {
   font-size: 1.2rem;
   width: 20px;
   color: rgba(255, 255, 255, 0.9);
-} 
+}
+
+/* Script support for back to top button */
+/* Note: The back-to-top button functionality is handled by JavaScript in the HTML files.
+   The button styling is defined in CSS but the show/hide behavior and click functionality
+   is implemented via <script> tags in each page that needs this feature. */
+
+/* Additional styles for visualization elements */ 
