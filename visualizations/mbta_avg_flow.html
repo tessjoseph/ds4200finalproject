@@ -1,13 +1,22 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
-  
-  <head>
-    
-      <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTA Lines - Average Flow by Time Period Interactive Heatmap</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to external CSS for styling -->
+</head>
+<body>
+    <header>
+        <h1>MBTA Lines - Average Flow by Time Period Interactive Heatmap</h1>
+    </header>
+
+    <main>
+        <section>
+
       <title>Panel</title>
       
       
@@ -109,3 +118,39 @@
   </body>
   
 </html>
+
+
+<iframe src="heatmap.html" width="900" height="600" style="border:none;"></iframe>
+
+            <p>
+                The second visualization is an interactive heatmap that offers a very detailed look at ridership patterns across the MBTA’s Red, Blue, Orange, 
+                and all Green Lines throughout the day. By selecting a specific line, users can examine how passenger flow fluctuates at each station during 
+                different time intervals. In other words, this heatmap provides a station-level breakdown of transit activity, revealing which stops experience 
+                the highest and lowest ridership at various times.
+            </p>
+
+            <p>
+                From this heatmap, we can once again see a clear trend emerge across all lines: ridership is highest during the AM_PEAK and PM_PEAK periods, 
+                confirming that the T serves as a crucial resource for work and school commutes. Another insight the visualization provides is about major 
+                transfer hubs—such as Park Street, Downtown Crossing, and North Station—which display consistently high passenger flow, reflecting their role 
+                as key points of connectivity within the system. On the Green Line branches, we can see that ridership is more spread out on the branches 
+                (excluding central Boston stations like Kenmore to North Station). This supports the idea that the Green Line primarily serves more residential 
+                and suburban areas rather than higher-density transit corridors.
+            </p>
+
+            <p>
+                By visualizing these ridership patterns, the heatmap provides valuable insights for both transit planners and riders. For the MBTA, identifying 
+                high-traffic stations and peak congestion times can inform service adjustments, such as increasing train frequency during certain times, adding 
+                rapid/express trains between high-frequency stops, or reallocating funds and resources to better meet demand. For commuters, understanding these 
+                trends can help with trip planning, allowing them to anticipate crowded conditions and adjust their schedules accordingly. Ultimately, this 
+                visualization highlights the dynamic nature of Boston’s subway ridership and offers data-driven insights to improve efficiency and accessibility 
+                in the city’s public transit system.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 MBTA Ridership Analysis Project</p>
+    </footer>
+</body>
+</html>      
