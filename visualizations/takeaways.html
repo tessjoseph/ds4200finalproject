@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takeaways - MBTA Ridership Analysis</title>
+    <link rel="stylesheet" href="styles.css">  <!-- External CSS -->
+    <style>
+        /* Main content styling */
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #003366;
+        }
+
+        .takeaway {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-left: 5px solid #003366;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner -->
+    <header>
+        MBTA Ridership Analysis Project
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="visualizations/lineplot.html">Line Plot</a></li>
+            <li><a href="visualizations/mbta_avg_flow.html">Interactive Heat Map</a></li>
+            <li><a href="visualizations/visualization3.html">Vis 3</a></li>
+            <li><a href="visualizations/visualization4.html">Vis 4</a></li>
+            <li><a href="visualizations/visualization5.html">Vis 5</a></li>
+            <li><a href="takeaways.html">Takeaways</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h2>Key Takeaways from MBTA Ridership Visualizations</h2>
+
+        <!-- Takeaway 1: Line Plot -->
+        <div class="takeaway">
+            <h3>Visualization 1: Line Plot of Ridership Trends</h3>
+            <p>
+                The line plot reveals clear **daily and weekly ridership patterns** across MBTA lines. A few key trends stand out:
+            </p>
+            <ul>
+                <li>**Ridership peaks occur during morning (AM_PEAK) and evening (PM_PEAK) hours**, aligning with common work and school commuting times.</li>
+                <li>**Weekend ridership is significantly lower** than weekday ridership, reflecting reduced commuter traffic.</li>
+                <li>Major transit hubs like **Downtown Crossing, Park Street, and South Station** consistently exhibit high ridership, confirming their importance in the network.</li>
+            </ul>
+            <p>
+                This visualization provides valuable insights for transit planning, enabling MBTA officials to **optimize service frequency based on peak times**.
+            </p>
+        </div>
+
+        <!-- Takeaway 2: Interactive Heatmap -->
+        <div class="takeaway">
+            <h3>Visualization 2: Interactive Heatmap of Station Flow</h3>
+            <p>
+                The heatmap further breaks down ridership patterns at a **station-by-station level** across different time periods:
+            </p>
+            <ul>
+                <li>Stations experience the **highest ridership during AM_PEAK and PM_PEAK periods**, confirming that the MBTA is primarily used for commuting.</li>
+                <li>Key **transfer stations** like **Park Street, North Station, and Downtown Crossing** show **continuous high traffic**, reinforcing their role as major connectivity points.</li>
+                <li>The **Green Line branches display more evenly distributed ridership**, suggesting that they primarily serve residential areas rather than high-density commercial hubs.</li>
+            </ul>
+            <p>
+                This heatmap allows both **riders and planners** to gain **station-level insights** and make informed decisions regarding travel and service improvements.
+            </p>
+        </div>
+
+    </main>
+
+    <!-- Bottom Banner -->
+    <footer>
+        © 2025 MBTA Ridership Analysis Project
+    </footer>
+
+</body>
+</html>
 
