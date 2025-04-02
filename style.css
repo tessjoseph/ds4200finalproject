@@ -509,6 +509,10 @@ section:hover {
   flex-direction: column;
   text-align: center;
   border-top: 4px solid transparent;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .feature-item:nth-child(1) {
@@ -537,6 +541,7 @@ section:hover {
 
 .feature-item:hover {
   transform: translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 25px;
 }
 
 .feature-item i {
