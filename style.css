@@ -82,6 +82,7 @@ header h1 {
   font-weight: 700;
   margin: 0 0 0.5rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 /* Main content area */
@@ -170,7 +171,7 @@ section {
 nav {
   display: flex;
   justify-content: center;
-  padding: var(--space-sm) 0;
+  padding: 0.5rem 0;
 }
 
 nav ul {
@@ -178,13 +179,13 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) 0;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
   margin: 0;
 }
 
 nav ul li {
-  margin: var(--space-xs);
+  margin: 0 5px;
 }
 
 nav ul li a {
@@ -192,10 +193,17 @@ nav ul li a {
   text-decoration: none;
   padding: 8px 15px;
   border-radius: 4px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   transition: all 0.3s ease;
   font-weight: 500;
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a i {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  color: white;
 }
 
 nav ul li a:hover {
