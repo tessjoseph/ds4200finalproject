@@ -44,7 +44,7 @@
             </div>
             
             <div class="visualization-container">
-                <iframe src="../heatmap.html" width="100%" height="500" frameborder="0"></iframe>
+                <img src="../lineplot.png" alt="Heat Map of MBTA Station Activity" class="viz-image">
             </div>
 
             <div class="transit-line">
@@ -58,6 +58,68 @@
             <p>
                 This heatmap shows the average daily passenger flow for each MBTA station across different time periods. The visualization helps identify which stations experience the highest activity levels and when these peak periods occur.
             </p>
+            
+            <div class="lines-legend">
+                <div class="mbta-line red-line">
+                    <span class="line-indicator"></span>
+                    <span class="line-name">Red Line</span>
+                </div>
+                <div class="mbta-line orange-line">
+                    <span class="line-indicator"></span>
+                    <span class="line-name">Orange Line</span>
+                </div>
+                <div class="mbta-line green-line">
+                    <span class="line-indicator"></span>
+                    <span class="line-name">Green Line</span>
+                </div>
+                <div class="mbta-line blue-line">
+                    <span class="line-indicator"></span>
+                    <span class="line-name">Blue Line</span>
+                </div>
+            </div>
+            
+            <h3><i class="fas fa-clock"></i> Time Periods</h3>
+            <p>
+                The visualization displays data for different time periods throughout the day:
+            </p>
+            <div class="time-periods">
+                <div class="time-period">
+                    <span class="time-label">VERY_EARLY_MORNING</span>
+                    <span class="time-desc">Before early commuters</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">EARLY_AM</span>
+                    <span class="time-desc">Early morning hours</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">AM_PEAK</span>
+                    <span class="time-desc">Morning rush hour</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">MIDDAY_BASE</span>
+                    <span class="time-desc">Late morning hours</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">MIDDAY_SCHOOL</span>
+                    <span class="time-desc">School dismissal times</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">PM_PEAK</span>
+                    <span class="time-desc">Evening rush hour</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">EVENING</span>
+                    <span class="time-desc">Early evening hours</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">LATE_EVENING</span>
+                    <span class="time-desc">Late evening hours</span>
+                </div>
+                <div class="time-period">
+                    <span class="time-label">NIGHT</span>
+                    <span class="time-desc">Night hours</span>
+                </div>
+            </div>
             
             <h3><i class="fas fa-lightbulb"></i> Key Insights</h3>
             <div class="insights-container">
@@ -80,7 +142,7 @@
                     <div class="insight-content">
                         <h4>Temporal Patterns</h4>
                         <p>
-                            Most stations exhibit clear peaks during AM_PEAK and PM_PEAK hours, with significantly reduced activity during early morning and late night periods. This pattern is especially pronounced at stations near business districts.
+                            Most stations exhibit clear peaks during <span class="highlight-red">AM_PEAK</span> and <span class="highlight-orange">PM_PEAK</span> hours, with significantly reduced activity during early morning and late night periods. This pattern is especially pronounced at stations near business districts.
                         </p>
                     </div>
                 </div>
@@ -92,7 +154,7 @@
                     <div class="insight-content">
                         <h4>Line Comparison</h4>
                         <p>
-                            Red Line stations generally show higher average flow compared to other lines, particularly at key locations like Harvard, Porter, and Davis. Green Line stations display more evenly distributed ridership across their routes.
+                            <span class="highlight-red">Red Line</span> stations generally show higher average flow compared to other lines, particularly at key locations like Harvard, Porter, and Davis. <span class="highlight-green">Green Line</span> stations display more evenly distributed ridership across their routes.
                         </p>
                     </div>
                 </div>
