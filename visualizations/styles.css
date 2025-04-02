@@ -67,30 +67,28 @@ body {
 
 /* Header & Navigation styles */
 header {
-  background: linear-gradient(135deg, var(--header) 0%, var(--header-gradient-end) 100%);
+  background: linear-gradient(135deg, #1a365d 0%, #0d2244 100%);
   color: white;
-  padding: var(--space-lg) 0;
-  box-shadow: 0 4px 12px var(--shadow-strong);
+  padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
 header h1 {
   text-align: center;
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   margin: 0 0 0.5rem;
-  letter-spacing: 0.5px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Navigation styles */
 nav {
   display: flex;
   justify-content: center;
-  padding: var(--space-sm) 0;
+  padding: 0.5rem 0;
 }
 
 nav ul {
@@ -98,46 +96,40 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--space-sm);
-  padding: var(--space-sm) 0;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
   margin: 0;
 }
 
 nav ul li {
-  margin: var(--space-xs);
+  margin: 0 5px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-md);
-  font-weight: 500;
-  transition: all 0.3s ease;
+  padding: 8px 15px;
+  border-radius: 4px;
   display: inline-flex;
   align-items: center;
+  transition: all 0.3s ease;
+  font-weight: 500;
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 nav ul li a i {
-  margin-right: var(--space-sm);
+  margin-right: 0.5rem;
   font-size: 0.9rem;
 }
 
 nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
 }
 
 nav ul li a.active {
-  background-color: var(--accent);
+  background-color: #3182ce;
   color: white;
-  border-color: var(--accent-hover);
-  box-shadow: 0 2px 10px rgba(49, 130, 206, 0.4);
 }
 
 /* Main content area */
