@@ -833,3 +833,35 @@ footer {
 /* Note: The back-to-top button functionality is handled by JavaScript in the HTML files.
    The button styling is defined in CSS but the show/hide behavior and click functionality
    is implemented via <script> tags in each page that needs this feature. */
+
+/* Visualization options styling */
+.viz-options {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.viz-description {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-left: 4px solid #0072b1;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.viz-description h3 {
+    color: #0072b1;
+    margin-bottom: 1rem;
+}
+
+.viz-description ul {
+    margin-left: 1.5rem;
+}
+
+.viz-description li {
+    margin-bottom: 0.5rem;
+}
