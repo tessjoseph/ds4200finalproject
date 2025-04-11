@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekend Analysis - MBTA Ridership Visualization</title>
+    <title>Station Location vs Flow - MBTA Ridership Visualization</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="description" content="Analysis of weekend vs weekday MBTA ridership patterns">
+    <meta name="description" content="Geographical analysis of MBTA station locations and passenger flow patterns across Boston's neighborhoods">
 </head>
 <body>
     <header>
@@ -40,85 +40,44 @@
             </div>
             
             <div class="viz-note">
-                <p>This map visualizes MBTA subway stations in Boston, with markers sized by passenger flow and colored by subway line, overlaid on Boston's ward boundaries.</p>
+                <p><strong>Note:</strong> This map visualizes MBTA subway stations in Boston, with markers sized by passenger flow and colored by subway line, overlaid on Boston's ward boundaries.</p>
             </div>
             
             <div class="visualization-container">
                 <iframe src="../mbta_subway_stations+.html" title="MBTA Interactive Map Visualization" class="embedded-viz" frameborder="0" allow="geolocation; fullscreen" allowfullscreen></iframe>
-                
+            </div>
 
+            <h3><i class="fas fa-info-circle"></i> About This Visualization</h3>
+            <p>
+                This interactive map illustrates how usage patterns vary across Boston's neighborhoods, highlighting areas with the most significant differences. By identifying these neighborhood-level disparities, the visualization reveals potential opportunities to optimize services, enabling targeted adjustments that align closely with actual community needs and behaviors.
+            </p>
+
+            <h3><i class="fas fa-lightbulb"></i> Key Insights</h3>
             <div class="insights-container">
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h4>Central Boston Transfer Stations</h4>
+                        <p>
+                            The stations with the highest average daily flow—Park Street, Downtown Crossing, South Station, and North Station—are concentrated within Central Boston, highlighting the area as a major hub for employment, tourism, and transit connectivity. Three of these busiest stations are notable transfer points between subway lines, which significantly boosts foot traffic. Although South Station only services the MBTA Red Line in this visualization, its broader role as a key intermodal hub connecting the subway to commuter rail systems likely contributes heavily to its high passenger volume. This underscores how transportation infrastructure and urban geography converge in Central Boston, emphasizing network connectivity as a primary driver of ridership. Future analyses incorporating commuter rail and bus networks could further clarify transit flow dynamics and more accurately reflect the importance of intermodal connections.
+                        </p>
+                    </div>
+                </div>
 
-    <div class="insight-card">
-        <div class="insight-icon">
-            <i class="fas fa-map-marker-alt"></i>
-        </div>
-        <div class="insight-content">
-            <h4>Central Boston Transfer Stations</h4>
-            <p>
-                The stations with the highest average daily flow—Park Street, Downtown Crossing, South Station, and 
-                North Station—are all located within the "Central Boston" area. This concentration of high-traffic stations 
-                suggests that Central Boston serves as a major hub for both employment and tourism. Notably, three of the 
-                four busiest stations are marked in black, indicating they are transfer points between multiple subway 
-                lines, which naturally drives higher foot traffic. While South Station is not shown as a transfer station in 
-                this visualization—since it only services the MBTA Red Line—it’s important to recognize its broader role as 
-                a key intermodal hub. South Station connects the Red Line with the MBTA Commuter Rail system, which falls 
-                outside the scope of the subway dataset used, but likely contributes significantly to its high flow.
-                This visualization highlights how transportation infrastructure and urban geography intersect in Central Boston. 
-                Its dominance in station traffic underscores the area's economic and cultural significance. The prominence of 
-                transfer stations among the busiest stops suggests that network connectivity is a key driver of ridership. 
-                Additionally, the exclusion of intermodal transit connections, like those at South Station, may lead to 
-                underestimating the true volume and importance of certain locations. Future analyses that integrate commuter 
-                rail and bus networks could provide a more complete picture of transit flow across the city.
-            </p>
-        </div>
-    </div> 
-
-    <div class="insight-card">
-        <div class="insight-icon">
-            <i class="fas fa-map-marker-alt"></i>
-        </div>
-        <div class="insight-content">
-            <h4>Geographical Disparities</h4>
-            <p>
-                Outside of Central Boston, stations with moderate to high flow are primarily located in wards like
-                Fenway/Kenmore, Back Bay, East Boston, Charlestown, Jamaica Plain/Mission Hill, South End, and Dorchester. 
-                These neighborhoods, while not the commercial core, still host a mix of residential density, educational 
-                institutions, and local economic activity, supporting regular ridership. Surrounding towns such as Brookline, 
-                Newton, Cambridge, and Malden also demonstrate notable transit usage, reflecting their integration into the 
-                greater Boston commuting network.
-                However, a clear disparity in MBTA subway accessibility emerges across several Boston wards. Areas like 
-                Roxbury, Hyde Park, Roslindale/Moss Hill/West Roxbury, Seaport, Mattapan, North Dorchester, and 
-                Allston/Brighton show sparse or no subway service. This uneven distribution points to broader geographical, 
-                economic, and social inequities. For example, the Seaport District—despite its rapid development into a business
-                and residential hub—lacks direct subway access due to its location on reclaimed land and the prohibitive cost 
-                of extending existing lines. As a result, it relies on the Silver Line, a bus rapid transit service that offers
-                limited capacity and convenience compared to subway infrastructure.
-                Similarly, Mattapan is served by the Mattapan Trolley, a light rail line rather than a full subway 
-                connection. Historical decisions around infrastructure costs and priorities have contributed to limited 
-                service in this area. These examples highlight how infrastructural investment—or the lack thereof—can shape
-                mobility, economic opportunity, and urban growth in different neighborhoods. A more equitable transit future 
-                would require deliberate planning and investment to better connect historically underserved communities to the
-                city’s core.
-                <a href="https://arxiv.org/html/2408.01888v1?" target="_blank" style="display:block; margin-top: 10px;">
-                    See this link for more information about Journey-Based Transit Equity in the Greater Boston Area.
-                </a>
-            </p>
-        </div>
-    </div>
-
-    <div class="viz-description">
-        <h3>About This Visualization</h3>
-        <p>Our interactive map shows:</p>
-        <ul>
-            <li>How usage patterns differ between Boston's neighborhoods</li>
-            <li>Which neighborhoods see the most significant differences</li>
-            <li>Potential opportunities for service adjustments based on actual usage</li>
-        </ul>
-    </div>
-
-</div>
-
+                <div class="insight-card">
+                    <div class="insight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="insight-content">
+                        <h4>Geographical Disparities </h4>
+                        <p>
+                            Outside of Central Boston, stations with moderate to high passenger flows are concentrated in neighborhoods like Fenway/Kenmore, Back Bay, East Boston, Charlestown, Jamaica Plain/Mission Hill, South End, and Dorchester, reflecting their residential density, educational institutions, and local economic activity. Surrounding communities, including Brookline, Newton, Cambridge, and Malden, also show substantial transit usage, highlighting their integration into Boston's broader commuting network. However, significant disparities in subway accessibility become evident in areas like Roxbury, Hyde Park, Roslindale/Moss Hill/West Roxbury, Seaport, Mattapan, North Dorchester, and Allston/Brighton, where subway coverage is sparse or nonexistent. For instance, the rapidly developing Seaport District relies on the Silver Line bus service rather than direct subway access due to geographical and financial constraints, limiting capacity and convenience. Similarly, Mattapan's dependence on the Mattapan Trolley—a light rail rather than a full subway service—reflects historical infrastructure investment decisions that continue to impact mobility, economic opportunity, and growth. Addressing these inequities through targeted planning and investment is crucial to achieving a more equitable transit future and enhancing connectivity for underserved neighborhoods.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
             <div class="transit-line">
                 <div class="red"></div>
