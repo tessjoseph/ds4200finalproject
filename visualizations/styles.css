@@ -1002,3 +1002,11 @@ h3 {
 h3 i {
     color: #4a90e2;
 }
+
+.commuter-trends {
+    margin: 2rem 0;
+    line-height: 1.6;
+    color: #505c6e;
+    text-align: justify;
+    padding: 0 1rem;
+}
