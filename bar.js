@@ -3,6 +3,14 @@ const margin = { top: 40, right: 20, bottom: 40, left: 200 };
 const width = 900 - margin.left - margin.right;
 const height = 600 - margin.top - margin.bottom;
 
+// MBTA Line Colors
+const routeColors = {
+  'Red': '#FA2D27',
+  'Orange': '#FD8A03',
+  'Green': '#00843D',
+  'Blue': '#003DA5'
+};
+
 // Create SVG container
 const svg = d3.select("#chart")
   .append("svg")
@@ -26,7 +34,6 @@ const yAxisGroup = svg.append("g")
 // Load data
 d3.csv('Rail_Ridership.csv').then(data => {
   // Convert numeric fields
-  
   data.forEach(d => {
     d.average_ons = +d.average_ons;
     d.average_offs = +d.average_offs;
@@ -35,7 +42,6 @@ d3.csv('Rail_Ridership.csv').then(data => {
   // Set up unique dropdowns
   const seasons = Array.from(new Set(data.map(d => d.season)));
   const dayTypes = Array.from(new Set(data.map(d => d.day_type_name)));
-  const color = Array.from(new Set(data.map(d => d.route_id)));
 
   // Add dropdowns
   d3.select("#controls")
@@ -76,18 +82,18 @@ d3.csv('Rail_Ridership.csv').then(data => {
     // Aggregate by stop
     const stops = d3.rollups(
       filtered,
-      v => d3.sum(v, d => d.average_ons + d.average_offs),
+      v => ({
+        total: d3.sum(v, d => d.average_ons + d.average_offs),
+        route_id: v[0].route_id  // Store the route_id with the aggregated data
+      }),
       d => d.stop_name
     );
 
     // Sort and pick top 20
-    const topStops = stops.sort((a, b) => b[1] - a[1]).slice(0, 20);
-
-    // Map stop names to route_name (get first matching route)
-    const stopToRoute = new Map(filtered.map(d => [d.stop_name, d.route_name]));
+    const topStops = stops.sort((a, b) => b[1].total - a[1].total).slice(0, 20);
 
     // Update domains
-    xScale.domain([0, d3.max(topStops, d => d[1])]);
+    xScale.domain([0, d3.max(topStops, d => d[1].total)]);
     yScale.domain(topStops.map(d => d[0]));
 
     // Update axes
@@ -96,7 +102,7 @@ d3.csv('Rail_Ridership.csv').then(data => {
 
     // Data join
     const bars = svg.selectAll(".bar")
-      .data(topStops, d => d[0]); // key by stop_name
+      .data(topStops, d => d[0]);
 
     // EXIT
     bars.exit().transition().duration(500).attr("width", 0).remove();
@@ -104,9 +110,12 @@ d3.csv('Rail_Ridership.csv').then(data => {
     // UPDATE
     bars.transition().duration(750)
       .attr("y", d => yScale(d[0]))
-      .attr("width", d => xScale(d[1]))
+      .attr("width", d => xScale(d[1].total))
       .attr("height", yScale.bandwidth())
-      .attr("fill", d => color(stopToRoute.get(d[0])));
+      .attr("fill", d => {
+        const route = d[1].route_id;
+        return routeColors[route] || '#999';
+      });
 
     // ENTER
     bars.enter()
@@ -116,9 +125,12 @@ d3.csv('Rail_Ridership.csv').then(data => {
       .attr("height", yScale.bandwidth())
       .attr("x", 0)
       .attr("width", 0)
-      .attr("fill", d = color)
+      .attr("fill", d => {
+        const route = d[1].route_id;
+        return routeColors[route] || '#999';
+      })
       .transition()
       .duration(750)
-      .attr("width", d => xScale(d[1]));
+      .attr("width", d => xScale(d[1].total));
   }
 });
