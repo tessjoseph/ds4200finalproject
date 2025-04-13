@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Station Comparison - MBTA Ridership Visualization</title>
+    <title>Busiest Stations by Day Type and Year</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <meta name="description" content="Interactive comparison of MBTA station ridership patterns">
+    <meta name="description" content="Top 20 Busiest MBTA Stations by Season and Day Type">
 </head>
 <body>
     <header>
@@ -23,8 +23,7 @@
             </ul>
         </nav>
     </header>
-    
-    <!-- MBTA Line Colors Bar -->
+
     <div class="transit-line">
         <div class="red"></div>
         <div class="orange"></div>
@@ -36,98 +35,38 @@
         <section>
             <div class="viz-heading">
                 <i class="fas fa-chart-pie"></i>
-                <h2>MBTA Station Sankey Diagram</h2>
+                <h2>Busiest Stations by Day Type and Year</h2>
             </div>
-                
+
             <div class="viz-note">
-                <p><strong>Note:</strong> This interactive Sankey diagram visualizes ridership flow between different MBTA stations. You can explore the data by interacting with the diagram.</p>
+                <p><strong>Note:</strong> This interactive bar chart shows the top 20 busiest MBTA stations based on the total number of average boardings and alightings combined. Filter the data by season (Fall 2017, Fall 2018, Fall 2019) and day type (Weekday, Saturday, Sunday) using the dropdown menus. Stations are color-coded by subway line: Red, Orange, Green, or Blue.</p>
             </div>
+
+            <div id="controls" class="controls"></div>
 
             <div class="visualization-container">
                 <iframe 
                     id="barChartFrame"
-                    src="../bar.html" 
+                    src="./bar.html" 
                     width="100%" 
                     height="800px" 
                     style="border:none; overflow:hidden;"
-                    scrolling="no"
-                ></iframe>
+                    scrolling="no">
+                </iframe>
             </div>
-            
+
             <div class="transit-line">
                 <div class="red"></div>
                 <div class="orange"></div>
                 <div class="green"></div>
                 <div class="blue"></div>
             </div>
-            
+
             <h3><i class="fas fa-info-circle"></i> About This Visualization</h3>
             <p>
-                This Sankey diagram visualizes how passengers move through the MBTA subway system across different years, lines, and time periods. Each flow represents the volume of ridership, with thicker bands showing heavier usage. It starts with data from Fall 2017 to Fall 2019, then breaks into individual lines—Red, Orange, Green, and Blue—before branching out to specific time-of-day segments like AM Peak, Evening, or Off-Peak. The layout makes it easy to compare how ridership shifts over time and across routes, highlighting major patterns and helping users and planners understand where the system sees the most traffic.
+                This interactive bar chart highlights the top 20 busiest MBTA stations across different seasons and day types. The total activity is calculated as the sum of average boardings and alightings. By selecting different seasons and day types, you can observe how station traffic patterns shift over time and how different stations serve commuters and leisure travelers.
             </p>
-            
-            <div class="lines-legend">
-                <div class="mbta-line red-line">
-                    <span class="line-indicator"></span>
-                    <span class="line-name">Red Line</span>
-                </div>
-                <div class="mbta-line orange-line">
-                    <span class="line-indicator"></span>
-                    <span class="line-name">Orange Line</span>
-                </div>
-                <div class="mbta-line green-line">
-                    <span class="line-indicator"></span>
-                    <span class="line-name">Green Line</span>
-                </div>
-                <div class="mbta-line blue-line">
-                    <span class="line-indicator"></span>
-                    <span class="line-name">Blue Line</span>
-                </div>
-            </div>
-            
-            <h3><i class="fas fa-clock"></i> Time Periods</h3>
-            <p>
-                The visualization displays data for different time periods throughout the day:
-            </p>
-            <div class="time-periods">
-                <div class="time-period">
-                    <span class="time-label">VERY EARLY MORNING</span>
-                    <span class="time-desc">Before early commuters</span>
-                </div>
-                <div class="time-period">
-                    <span class="time-label">EARLY AM</span>
-                    <span class="time-desc">Early morning hours</span>
-                </div>
-                <div class="time-period">
-                    <span class="time-label">AM PEAK</span>
-                    <span class="time-desc">Morning rush hour</span>
-                </div>
-                <div class="time-period">
-                    <span class="time-label">MIDDAY BASE</span>
-                    <span class="time-desc">Late morning hours</span>
-                </div>
-                <div class="time-period">
-                    <span class="time-label">MIDDAY SCHOOL</span>
-                    <span class="time-desc">School dismissal times</span>
-                </div>
-                <div class="time-period">
-                    <span class="time-label">PM PEAK</span>
-                    <span class="time-desc">Evening rush hour</span>
-                </div>
-                <div class="time-period">
-                    <span class="time-label">EVENING</span>
-                    <span class="time-desc">Early evening hours</span>
-                </div>
-                <div class="time-period">
-                    <span class="time-label">LATE EVENING</span>
-                    <span class="time-desc">Late evening hours</span>
-                </div>
-                <div class="time-period">
-                    <span class="time-label">NIGHT</span>
-                    <span class="time-desc">Night hours</span>
-                </div>
-            </div>
-            
+
             <h3><i class="fas fa-lightbulb"></i> Key Insights</h3>
             <div class="insights-container">
                 <div class="insight-card">
@@ -135,33 +74,33 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="insight-content">
-                        <h4>High-Traffic Stations</h4>
+                        <h4>Consistently Busy Stations</h4>
                         <p>
-                            Stations such as Downtown Crossing, Park Street, and South Station exhibit high passenger flow across multiple lines, reflecting their roles as major transfer points.
+                            South Station, Downtown Crossing, and Park Street consistently show high total flow across all seasons and day types.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="insight-card">
                     <div class="insight-icon">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-calendar-day"></i>
                     </div>
                     <div class="insight-content">
-                        <h4>Temporal Patterns</h4>
+                        <h4>Weekday vs Weekend Variation</h4>
                         <p>
-                            The Sankey diagram highlights the dominant flow during peak hours, with stations experiencing heavy movement during the AM and PM rush hours.
+                            Some stations experience significant drops in traffic on weekends compared to weekdays, highlighting commuter-heavy patterns.
                         </p>
                     </div>
                 </div>
-                
+
                 <div class="insight-card">
                     <div class="insight-icon">
-                        <i class="fas fa-route"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="insight-content">
-                        <h4>Line Comparison</h4>
+                        <h4>Year-to-Year Stability</h4>
                         <p>
-                            The diagram helps compare ridership across the Red, Orange, Green, and Blue lines, illustrating where passengers tend to transfer most frequently.
+                            The busiest stations remain stable from 2017 to 2019, suggesting consistent travel behavior over the years.
                         </p>
                     </div>
                 </div>
@@ -169,21 +108,21 @@
 
             <h3><i class="fas fa-bullseye"></i> Implications</h3>
             <p>
-                This Sankey diagram assists in identifying key patterns that can inform decisions on service optimizations, station upgrades, and capacity improvements.
+                These patterns can guide service planning, station upgrades, and operational improvements:
             </p>
             <ul>
-                <li>Transfer-heavy stations may need expanded facilities to handle high traffic</li>
-                <li>Peak flow periods can help design better schedules and express services</li>
-                <li>Frequent transfer points can serve as hubs for strategic service planning</li>
+                <li>Expand peak-hour service for weekday-heavy stations.</li>
+                <li>Improve weekend schedules for stations with growing weekend usage.</li>
+                <li>Prioritize infrastructure investments for consistently busy hubs.</li>
             </ul>
-            
+
             <div class="transit-line">
                 <div class="red"></div>
                 <div class="orange"></div>
                 <div class="green"></div>
                 <div class="blue"></div>
             </div>
-            
+
             <div class="navigation-buttons">
                 <a href="lineplot.html" class="btn btn-alt">
                     <i class="fas fa-chart-line"></i> View Line Plot
@@ -194,12 +133,12 @@
             </div>
         </section>
     </main>
-    
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>MBTA Visualization Project</h3>
-                <p>A data visualization exploration of Boston's subway system ridership patterns and transit efficiency</p>
+                <p>A data visualization exploration of Boston's subway system ridership patterns and transit efficiency.</p>
                 <div class="social-icons">
                     <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
                     <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
@@ -229,7 +168,7 @@
             <p>&copy; 2023 MBTA Visualization Project | DS4200 Final Project</p>
         </div>
     </footer>
-    
+
     <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
@@ -237,7 +176,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const backToTopButton = document.querySelector('.back-to-top');
-            
+
             if (backToTopButton) {
                 window.addEventListener('scroll', () => {
                     if (window.pageYOffset > 300) {
@@ -246,7 +185,7 @@
                         backToTopButton.classList.remove('show');
                     }
                 });
-                
+
                 backToTopButton.addEventListener('click', (e) => {
                     e.preventDefault();
                     window.scrollTo({ top: 0, behavior: 'smooth' });
