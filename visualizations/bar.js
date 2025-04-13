@@ -1,7 +1,7 @@
 // Set margins and dimensions
 const margin = { top: 40, right: 20, bottom: 40, left: 200 };
-const width = 900 - margin.left - margin.right;
-const height = 600 - margin.top - margin.bottom;
+const width = 1000 - margin.left - margin.right;
+const height = 700 - margin.top - margin.bottom;
 
 // MBTA Line Colors
 const routeColors = {
@@ -14,8 +14,9 @@ const routeColors = {
 // Create SVG container
 const svg = d3.select("#chart")
   .append("svg")
-  .attr("width", width + margin.left + margin.right)
+  .attr("width", "100%")
   .attr("height", height + margin.top + margin.bottom)
+  .attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`)
   .append("g")
   .attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -39,60 +40,32 @@ d3.csv('Rail_Ridership.csv').then(data => {
     d.average_offs = +d.average_offs;
   });
 
-  // Set up unique dropdowns
-  const seasons = Array.from(new Set(data.map(d => d.season)));
-  const dayTypes = Array.from(new Set(data.map(d => d.day_type_name)));
+  function updateChart() {
+    const selectedSeason = d3.select("#seasonSelect").property("value");
+    const selectedDayType = d3.select("#dayTypeSelect").property("value");
 
-  // Add dropdowns
-  d3.select("#controls")
-    .append("select")
-    .attr("id", "seasonDropdown")
-    .selectAll("option")
-    .data(seasons)
-    .enter()
-    .append("option")
-    .attr("value", d => d)
-    .text(d => d);
-
-  d3.select("#controls")
-    .append("select")
-    .attr("id", "dayTypeDropdown")
-    .selectAll("option")
-    .data(dayTypes)
-    .enter()
-    .append("option")
-    .attr("value", d => d)
-    .text(d => d);
-
-  // Initial plot
-  updateChart(seasons[0], dayTypes[0]);
-
-  // When dropdown changes
-  d3.select("#seasonDropdown").on("change", () => {
-    updateChart(d3.select("#seasonDropdown").property("value"), d3.select("#dayTypeDropdown").property("value"));
-  });
-  d3.select("#dayTypeDropdown").on("change", () => {
-    updateChart(d3.select("#seasonDropdown").property("value"), d3.select("#dayTypeDropdown").property("value"));
-  });
-
-  function updateChart(selectedSeason, selectedDayType) {
     // Filter data
-    const filtered = data.filter(d => d.season === selectedSeason && d.day_type_name === selectedDayType);
+    const filtered = data.filter(d => 
+      d.season === selectedSeason && 
+      d.day_type_name === selectedDayType
+    );
 
     // Aggregate by stop
     const stops = d3.rollups(
       filtered,
       v => ({
         total: d3.sum(v, d => d.average_ons + d.average_offs),
-        route_id: v[0].route_id  // Store the route_id with the aggregated data
+        route_id: v[0].route_id
       }),
       d => d.stop_name
     );
 
-    // Sort and pick top 20
-    const topStops = stops.sort((a, b) => b[1].total - a[1].total).slice(0, 20);
+    // Sort and get top 20
+    const topStops = stops
+      .sort((a, b) => b[1].total - a[1].total)
+      .slice(0, 20);
 
-    // Update domains
+    // Update scales
     xScale.domain([0, d3.max(topStops, d => d[1].total)]);
     yScale.domain(topStops.map(d => d[0]));
 
@@ -100,37 +73,43 @@ d3.csv('Rail_Ridership.csv').then(data => {
     xAxisGroup.transition().duration(750).call(d3.axisTop(xScale).ticks(5));
     yAxisGroup.transition().duration(750).call(d3.axisLeft(yScale));
 
-    // Data join
+    // Update bars
     const bars = svg.selectAll(".bar")
       .data(topStops, d => d[0]);
 
-    // EXIT
-    bars.exit().transition().duration(500).attr("width", 0).remove();
+    // Exit
+    bars.exit()
+      .transition()
+      .duration(750)
+      .attr("width", 0)
+      .remove();
 
-    // UPDATE
-    bars.transition().duration(750)
-      .attr("y", d => yScale(d[0]))
-      .attr("width", d => xScale(d[1].total))
-      .attr("height", yScale.bandwidth())
-      .attr("fill", d => {
-        const route = d[1].route_id;
-        return routeColors[route] || '#999';
-      });
-
-    // ENTER
-    bars.enter()
+    // Enter
+    const barsEnter = bars.enter()
       .append("rect")
       .attr("class", "bar")
       .attr("y", d => yScale(d[0]))
       .attr("height", yScale.bandwidth())
       .attr("x", 0)
-      .attr("width", 0)
-      .attr("fill", d => {
-        const route = d[1].route_id;
-        return routeColors[route] || '#999';
-      })
+      .attr("width", 0);
+
+    // Update + Enter
+    bars.merge(barsEnter)
       .transition()
       .duration(750)
-      .attr("width", d => xScale(d[1].total));
+      .attr("y", d => yScale(d[0]))
+      .attr("width", d => xScale(d[1].total))
+      .attr("height", yScale.bandwidth())
+      .attr("fill", d => routeColors[d[1].route_id] || "#999");
   }
+
+  // Add event listeners to dropdowns
+  d3.select("#seasonSelect").on("change", updateChart);
+  d3.select("#dayTypeSelect").on("change", updateChart);
+
+  // Initial chart render
+  updateChart();
+
+}).catch(error => {
+  console.error("Error loading the data:", error);
 });

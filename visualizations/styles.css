@@ -661,22 +661,30 @@ footer {
 
 /* Visualization container */
 .visualization-container {
-  background-color: white;
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
-  box-shadow: 0 10px 25px var(--shadow);
-  margin: var(--space-xl) 0;
-  border: 1px solid var(--card-border);
-  transition: all 0.3s ease;
+  width: 100%;
+  margin: 2rem 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
-.visualization-container:hover {
-  box-shadow: 0 15px 35px var(--shadow-strong);
+.visualization-container iframe {
+  width: 100%;
+  border: none;
+  display: block;
 }
 
-.viz-image {
-  margin: 0;
-  border-radius: var(--radius-md);
+/* Specific styling for the stacked area chart */
+.viz-heading + .viz-note + .visualization-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #fff;
+}
+
+.viz-heading + .viz-note + .visualization-container iframe {
+  min-height: 800px;
+  height: 800px;
 }
 
 /* Viz heading with icon */
