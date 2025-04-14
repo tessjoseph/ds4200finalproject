@@ -57,7 +57,8 @@
             
             <h3><i class="fas fa-info-circle"></i> About This Visualization</h3>
             <p>
-                This stacked area chart shows how total boardings are distributed across MBTA stations, broken down by subway line and time of day. Each section of color represents a different transit line—Red, Orange, Green, or Blue—making it easy to see how different routes contribute to overall ridership. Taller stacks indicate higher boardings at particular stations, helping to spotlight the busiest stops in the system. By adjusting the filters, users can explore trends for specific lines and time periods to better understand where and when ridership peaks. This visualization offers valuable insight for transit planners and riders alike, supporting decisions about service planning and travel timing.
+                This visualization was created to display the total boardings by station and route for the MBTA system across different times of day. Using Altair, we plotted each station as a bubble—color-coded by transit line (e.g., Green Line = green, Red Line = red, etc.). The size of each bubble corresponds to the total number of boardings onto that station, with larger bubbles representing higher ridership levels. To account for the different times of day, the chart categorizes the data into distinct time periods, such as morning peak, midday, and evening. Interactive tooltips allow users to hover over each bubble to view detailed information, including the station name, route, and exact boarding numbers. This design makes it easy to compare total boardings across both individual stations and entire lines, while also identifying peak ridership periods. By combining interactivity, proportional sizing, and categorical color encoding, the visualization offers a clear and accessible method for analyzing MBTA transit usage.
+
             </p>
             
             <div class="lines-legend">
